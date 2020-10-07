@@ -1,0 +1,61 @@
+id,How old are you?,What is your educational level?,How much do you value your education?,What is your income? ( CA$ per year ),Do you attach importance to voting?,What is the most significant factor that affects your vote?,How many parties do you know?,Which Canadian political party do you support?,What is your satisfaction with the Liberal Party?,Do you think the government needs to spend more money on education?
+1,22,,5,<80000,No,Media,>4,Liberal,3,Yes
+2,20,high school degree and below,4,<80000,Yes,Immediate Family Members,3-4,Liberal,3,Yes
+3,20,high school degree and below,5,<80000,Yes,Media,>4,New Democrat,3,Yes
+4,49,master's degree and higher,5,<80000,Yes,Immediate Family Members,1-2,Liberal,4,Yes
+5,20,bachelor's degree,5,<80000,No,Media,1-2,Liberal,4,Yes
+6,20,bachelor's degree,5,<80000,Yes,Friends,1-2,Liberal,5,Yes
+7,20,bachelor's degree,4,<80000,Yes,Immediate Family Members,1-2,Liberal,3,Yes
+8,21,high school degree and below,4,<80000,Yes,Immediate Family Members,3-4,Liberal,3,Yes
+9,20,bachelor's degree,3,<80000,No,Other,>4,Conservative,1,Yes
+10,,bachelor's degree,5,<80000,No,Media,1-2,Liberal,4,Yes
+11,20,high school degree and below,5,<80000,No,Media,1-2,Liberal,3,Yes
+12,21,bachelor's degree,5,<80000,Yes,Media,3-4,Liberal,3,Yes
+13,22,high school degree and below,3,<80000,Yes,Media,3-4,Liberal,4,Yes
+14,20,high school degree and below,5,<80000,No,Media,1-2,Conservative,3,Yes
+15,47,bachelor's degree,5,>300000,Yes,Media,1-2,Liberal,4,Yes
+16,20,bachelor's degree,4,<80000,No,Other,3-4,Liberal,3,Yes
+17,47,bachelor's degree,5,>300000,Yes,Media,1-2,Liberal,5,Yes
+18,49,bachelor's degree,5,80000 - 160000,Yes,Relatives,1-2,New Democrat,4,Yes
+19,35,master's degree and higher,4,80000 - 160000,Yes,Relatives,1-2,New Democrat,5,Yes
+20,,bachelor's degree,4,<80000,No,Media,1-2,Liberal,3,Yes
+21,21,high school degree and below,5,<80000,Yes,Immediate Family Members,1-2,Conservative,1,Yes
+22,23,bachelor's degree,5,<80000,Yes,Media,3-4,People's Party,3,Yes
+23,19,bachelor's degree,3,<80000,Yes,Immediate Family Members,1-2,People's Party,5,Yes
+24,22,bachelor's degree,5,<80000,No,Immediate Family Members,3-4,New Democrat,3,Yes
+25,20,bachelor's degree,3,<80000,No,Media,3-4,Conservative,3,Yes
+26,20,bachelor's degree,4,<80000,Yes,Relatives,1-2,Conservative,3,Yes
+27,23,bachelor's degree,4,<80000,Yes,Immediate Family Members,1-2,Conservative,3,Yes
+28,20,bachelor's degree,3,<80000,Yes,Immediate Family Members,3-4,Liberal,4,Yes
+29,22,high school degree and below,3,<80000,Yes,Media,1-2,Liberal,3,Yes
+30,20,bachelor's degree,3,<80000,No,Friends,1-2,Liberal,3,Yes
+31,47,bachelor's degree,5,80000 - 160000,Yes,Media,1-2,New Democrat,3,Yes
+32,21,bachelor's degree,5,<80000,Yes,Media,1-2,Liberal,3,Yes
+33,21,bachelor's degree,3,<80000,No,Relatives,1-2,Liberal,3,Yes
+34,50,master's degree and higher,5,80000 - 160000,Yes,Immediate Family Members,3-4,Liberal,4,Yes
+35,27,master's degree and higher,3,<80000,No,Immediate Family Members,3-4,Liberal,4,Yes
+36,20,high school degree and below,5,<80000,No,Other,1-2,Conservative,4,Yes
+37,20,bachelor's degree,4,<80000,Yes,Media,1-2,Liberal,3,Yes
+38,20,high school degree and below,2,<80000,Yes,Media,3-4,Conservative,3,Yes
+39,35,master's degree and higher,3,80000 - 160000,Yes,Immediate Family Members,1-2,Liberal,3,Yes
+40,22,bachelor's degree,5,<80000,Yes,Media,1-2,Conservative,5,Yes
+41,47,bachelor's degree,5,80000 - 160000,Yes,Media,1-2,Liberal,4,Yes
+42,34,bachelor's degree,5,>300000,No,Relatives,1-2,Conservative,3,Yes
+43,22,bachelor's degree,4,<80000,No,Friends,3-4,Conservative,3,Yes
+44,21,master's degree and higher,4,<80000,Yes,Immediate Family Members,1-2,Liberal,4,Yes
+45,30,bachelor's degree,3,80000 - 160000,Yes,Immediate Family Members,1-2,Liberal,2,Yes
+46,22,bachelor's degree,3,<80000,Yes,Other,3-4,Liberal,3,Yes
+47,23,master's degree and higher,4,<80000,No,Media,1-2,Conservative,4,Yes
+48,15,high school degree and below,4,<80000,Yes,Media,1-2,New Democrat,3,Yes
+49,25,master's degree and higher,5,80000 - 160000,No,Relatives,1-2,Conservative,3,Yes
+50,12,high school degree and below,5,<80000,Yes,Other,3-4,Liberal,5,Yes
+51,54,master's degree and higher,5,>300000,Yes,Immediate Family Members,3-4,Conservative,2,Yes
+52,28,bachelor's degree,4,80000 - 160000,Yes,Friends,1-2,Conservative,3,Yes
+53,18,high school degree and below,5,<80000,Yes,Immediate Family Members,1-2,Liberal,4,Yes
+54,21,bachelor's degree,5,<80000,Yes,Media,>4,Liberal,5,Yes
+55,20,bachelor's degree,3,<80000,No,Media,1-2,Liberal,4,Yes
+56,19,high school degree and below,5,<80000,Yes,Friends,1-2,People's Party,5,Yes
+57,16,high school degree and below,4,<80000,Yes,Friends,1-2,Liberal,3,Yes
+58,27,bachelor's degree,4,80000 - 160000,No,Other,1-2,Conservative,3,Yes
+59,13,high school degree and below,5,<80000,Yes,Media,>4,Conservative,4,Yes
+60,50,bachelor's degree,4,>300000,Yes,Media,3-4,Liberal,5,Yes

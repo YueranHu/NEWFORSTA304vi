@@ -1,0 +1,261 @@
+---
+title: "Whether the support of Canadian political parties is related to the educational level of voters"
+author: 'Huayu Wu, Jingyi Nie, Qian Wang, Yueran Hu'
+date: "2020/10/8"
+categories: ["R"]
+bibliography: "references.bib"
+html_document: default
+pdf_document: default
+---
+
+We use `R`[@citeR], `tidyverse` package [@citetidyverse], `dplyr` package [@citedplyr],  `skimr` package [@citeskimr], `devtools` package [@citedevtools], `survey` package [@citesurvey] and  `visdat` package [@citevisdat] to do the analysis.
+
+# Summary
+
+In this task, we were hired by a Canadian polling company Petit Poll and worked for a Canadian political party Liberal Party. Through researching, we found that Conservatives have a strong lead among those who have not attended college or university, while the Liberal Party has a lead among those with university education. In this case, we helped the Liberal to find out the relation between the support of Canadian political parties and people’s education levels. We gathered the data from the ‘Canadian Election Online Survey 2020.10’, and filtered some ineffective sample before analyzing. We divided all the voters' data into three different education levels by their different proportions of all respondents. Then we made graphs to show the six Canadian political parties supported by respondents from each educational level. We found that the respondents with all three education degrees support Liberal Party the most especially for bachelor’s degree, but there is not a great difference in the number of supporters with high school degree and master degree. This finding plays a key role in all Canadian political parties since the education level might be a key reason for Canadian political parties to win more support. And it helps the parties to find the importance of education to voters. Based on this investigation, the Liberal Party knows its strengths compared with other parties and what the party should focus on. It can make more premises to people for continuous serving. For our weakness in this study, we found that age might be a lurking variable for our sample by showing the box plot. The distribution of voters' age varies is different for each political party. That means that voters’ age could also bring impacts on the distribution of voters. Moreover, the sample is not big enough and most of the voters were from the bachelor's degree, that made our result was not accurate nor comprehensive to the realistic situation. For our future work, we can try to find more relative variables, such as income, genders, religions and so on. We would analyze if there is an impact on voters’ income, genders, religions to their political parties preferences. Next, we would try to find a valid method to reduce the influence of outliers, like increasing sample size and do further data cleaning.
+ 
+# Abstract
+
+In this research, we used data in 'Canadian Election Online Survey 2020.10' to explore whether the support of Canadian political parties has a relationship with the educational level of voters. The results illustrate the most popular Canadian political party for all respondents are the Liberal Party and the main supporters of the Liberal Party are highly-educated. Whether voters with different educational levels have their specific preferences for political parties has been a thought-provoking issue in Canada, which is the reason for this research. 
+
+# Introduction
+
+In the U.S., according to a variety of academic studies have investigated a voter’s education level and juxtaposed it with his/her political preferences. They found in most cases, voters with more education tend to lean liberal rather than conservative[@Taube_2019]. Liberal Party in Canada wanted to find out if this investigation is true for the current political situation in Canada. Finding whether the support of Canadian political parties is related to voters’ education levels is important since it determines the support of Canadian parties and whether the Liberal Party will continue serving or not to some extent.
+
+We used the dataset from the ‘Canadian Election Online Survey 2020.10’ gathered by some statisticians working for Liberal Party in Petit Poll. In this report, we focused on voters’ education levels, the party they voted for, and their satisfaction to the Liberal Party. After filtering the ineffective data from ‘Canadian online survey data 2020.10” and saved it as data, we stratified the data into three categories by different educational levels: “high school degree and below”, "bachelor's degree”, and "master's degree and higher” by their different proportions of all voters. Then, we draw multiple bar plots to show the support of different Canadian political parties in three distinct education level. By observing the outcome, we found that the Liberal Party gets the most supports from the survey respondents in each education level. Among all the voters, the number of the Liberal Party's supporters with the bachelor's degree is importantly higher than that of respondents supporting for other parties. That means there exists a relationship between voters’ political party preference and their education level. By this investigation, it can help the Liberal Party to learn the advantage of its strength compared with other parties. We can suggest the Liberal Party to publicize carry forward this advantage to gain more support from the public.
+
+The first weakness is that we do not consider a main lurking variable, which is age. Secondly, the educational level of samples is concentrated in the bachelor's degree, which may cause our result of data analysis is not very consistent with the situation in reality. Lastly, our sample might not represent the Canada population because the sample size is limited. In the next step, we can investigate other relative variables and find more effective methods to decrease the influence of outliers and missing values.
+
+
+# Methodology
+
+The objective of the survey is to investigate the relationship between the education level of voters and the polls of different political parties. 
+
+The population of this survey is the participants who take the survey, the frame of the survey is the contact list of 60 respondents who participated in the survey, and the sample is 30 respondents who participated in the survey. The survey collects several data relevant to how education level influences the polls of 6 main Canadian parties which are Liberal, Conservative, New Democrat, Bloc Quebecois, Green, and People's Party. For example, the survey collects the education level of each voter. Also, the survey investigates how participants think about the government's investment in education. The frame of the survey is the contact list of 60 respondents who participated in the survey. On the other hand, the sample consists of 30 respondents who participated in the survey.
+
+The Petit Poll company chooses the sampling method of stratified random sampling. The reason why we choose this method is that we want to accurately reflect the entire population. We stratify the entire population before we apply random sampling methods. Thus, it helps our investigation provides better coverage of the larger population which we could not cover. Therefore, the budget for this survey may not high and we estimate this will cost about a hundred Canadian dollars.
+
+The data is stratified into three categories by different educational levels. As long as we get enough participants in different strata, the people who do the survey is not quite different from the people who don't take the survey in this population since their background is similar. 
+
+Thus, the Petit Poll company collect the data by using the online survey system on Survey Monkey to spread the survey. The online survey is easier to take and spreads faster than other methods. If the number of non-responses is high,  we will post our survey link online on different social media so that there are more participants to take the survey. There are 10 questions on the survey and most of them are multiple choices that make the survey easier to take.
+
+Among these questions, there are no personal details required. All data is saved in the company and only can be accessed with the confirmation.
+
+
+# Data discussion
+
+The data shown on the Canadian polling company Petit Poll is gathered from ‘Canadian Election Online Survey 2020.10’. The Canadian Election Online Survey 2020.10 was conducted via online, and it is a survey for Petit Poll to provide a Canadian political party called Liberal Party with discovering whether the support of Canadian political Parties is related to the education levels of voters. The respondents were selected from some junior statisticians’ friends, relatives, classmates, and families. We asked 10 questions in the online survey which provided our statisticians with a set of data about different political Parties, education, economic state and opinion of current government which are corresponding to our study. These data are significant since they are highly related to the question which we worked for.
+Since some respondents skipped a few questions when they did the survey, we cleaned some samples that were not effective. In next step, We randomly selected different size of data to form three different education levels: "high school degree and below”, "bachelor's degree”, and "master's degree and higher” by their different proportions in the whole dataset.
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# options(scipen=999)
+# install.packages("dplyr")
+# install.packages("tidyverse")
+# install.packages("skimr")
+# install.packages("devtools")
+# install.packages("visdat")
+# install.packages('survey')
+# devtools::install_github("hodgettsp/cesR")
+library(tidyverse)
+library(visdat)
+library(cesR)
+library(skimr)
+library(knitr)
+library(dplyr)
+#library(survey)
+
+```
+
+
+```{r , include = FALSE}
+set.seed(99)
+data <- read.csv(file = "Canadian online survey data2020.10.csv", header = TRUE)
+```
+
+```{r, include = FALSE}
+head(data)
+```
+
+```{r, include =FALSE}
+# Rename the column name "What.is.your.educational.level." to education_level so that we can apply the variable more conveniently.
+data$education_level<-data$What.is.your.educational.level.
+# Firstly, we sliced the population into 3 strata by education_level before the sample is selected.
+strata_1 <- (data[which(data$education_level=="high school degree and below"),])
+strata_2 <- (data[which(data$education_level=="bachelor's degree"),])
+strata_3 <- (data[which(data$education_level=="master's degree and higher"),])
+# Count the number of unit in each strata and the whole population.
+strata_1_num<-count(strata_1)
+strata_2_num<-count(strata_2)
+strata_3_num<-count(strata_3)
+strata_1_num
+strata_2_num
+strata_3_num
+```
+
+```{r, include =FALSE}
+# There are a total of 60 units in the population data with one data which has a missing value in the variable of education_level. Then we calculate the ratio of the population size with 59 and each strata size. We time each strata ratio by 30 since we attempt to select 30 units of data to the sample from the population.  
+sample_1_num <- floor((strata_1_num/59)*30)
+sample_2_num <- floor((strata_2_num/59)*30)
+sample_3_num <- floor((strata_3_num/59)*30)
+sample_1_num <- as.numeric(sample_1_num)
+sample_2_num <- as.numeric(sample_2_num)
+sample_3_num <- as.numeric(sample_3_num)
+# Then we use simple random sampling to select the data from each stratum with the expected sample size.
+data_row_1 <- sample(1:nrow(strata_1),size=sample_1_num)
+sample_1 <- strata_1[data_row_1,]
+
+data_row_2 <- sample(1:nrow(strata_2),size=sample_2_num)
+sample_2 <- strata_2[data_row_2,]
+
+data_row_3 <- sample(1:nrow(strata_3),size=sample_3_num)
+sample_3 <- strata_3[data_row_3,]
+# Finally, we combined three samples from each stratum to create the final version of our sample.
+final_sample <- rbind(sample_1, sample_2, sample_3)
+final_sample
+count(final_sample)
+# We reorder the sample by id.
+final_sample[with(final_sample,order(id)),]
+```
+
+## Tables
+1. The number of respondents in each educational level
+
+```{r, echo=FALSE, message=FALSE}
+# Get the total number of respondents for each education level
+num_high_below <- sum(final_sample$education_level == "high school degree and below")
+num_bachelor <- sum(final_sample$education_level == "bachelor's degree")
+num_master <- sum(final_sample$education_level == "master's degree and higher")
+
+num_edu <- matrix(c(num_high_below,num_bachelor, num_master),ncol=3,byrow=TRUE)
+colnames(num_edu) <- c("high school and below", "bachelor's degree", "master's degree and higher")
+rownames(num_edu) <- "number"
+num_edu <- as.table(num_edu)
+num_edu
+```
+The table indicates the educational level of most respondents is bachelor's degree.
+
+
+2. The number of respondents who support for each Canadian political party
+
+```{r, echo=FALSE, message=FALSE}
+# Get the total number of respondents supporting each Canadian political parties
+num_liberal <- sum(final_sample$Which.Canadian.political.party.do.you.support. == "Liberal")
+num_conservative <- sum(final_sample$Which.Canadian.political.party.do.you.support. == "Conservative")
+num_new_democrat <- sum(final_sample$Which.Canadian.political.party.do.you.support. == "New Democrat")
+num_bloc_quebecois <- sum(final_sample$Which.Canadian.political.party.do.you.support. == "Bloc Quebecois")
+num_green <- sum(final_sample$Which.Canadian.political.party.do.you.support. == "Green")
+num_people_s_party <- sum(final_sample$Which.Canadian.political.party.do.you.support. == "People's Party")
+
+num_voters <- matrix(c(num_liberal, num_conservative, num_new_democrat, num_bloc_quebecois, num_green, num_people_s_party), ncol=6, byrow=TRUE)
+colnames(num_voters) <- c("Liberal", "Conservative", "New Democrat", "Quebecois", "Green", "People")
+rownames(num_voters) <- "number"
+num_voters <- as.table(num_voters)
+num_voters
+```
+The table shows it seems that Liberal Party is the most popular Canadian political party and Bloc Quebecois and Green Part are the most unpopular Canadian political party.
+
+
+## Graphs
+```{r, include = FALSE}
+# In order to draw graphs to show the six Canadian political parties supported by respondents from each educational level, we filter data by educational levels to create three datasets. 
+dataset1 <- 
+  final_sample %>% 
+  filter( final_sample$education_level == "high school degree and below")
+dataset1
+
+dataset2 <- 
+  final_sample %>% 
+  filter( final_sample$education_level == "bachelor's degree")
+dataset2
+
+dataset3 <- 
+  final_sample %>% 
+  filter( final_sample$education_level == "master's degree and higher")
+dataset3
+```
+
+```{r, echo=FALSE, message=FALSE}
+ dataset1%>% 
+  ggplot(aes(x = Which.Canadian.political.party.do.you.support.)) +
+  geom_bar(col="purple", fill="pink") + theme_bw() + 
+  labs(x = "Supporting Parties", y = "Number of respondents", title="Bar plot of the supporters for each Canadian political party", subtitle = "with education level of high school degree and below")
+```
+From the bar plot, it is seemingly Liberal Party gets the most supports from respondents who have high school degree and below. However, there is not much difference in the number of supporters with high school degree and below for each Canadian political party.
+
+```{r, echo=FALSE, message=FALSE}
+ dataset2%>% 
+  ggplot(aes(x = Which.Canadian.political.party.do.you.support.)) +
+  geom_bar(col="purple", fill="pink") + theme_bw() + 
+  labs(x = "Supporting Parties", y = "Number of respondents", title="Bar plot of the supporters for each party", subtitle = "with education level of bachelor's degree")
+```
+The bar plot demonstrates respondents with bachelor's degree support Liberal Party the most, and the number of these respondents far exceed the number of respondents supporting other parties.
+
+```{r, echo=FALSE, message=FALSE}
+ dataset3%>% 
+  ggplot(aes(x = Which.Canadian.political.party.do.you.support.)) +
+  geom_bar(col="purple", fill="pink") + theme_bw() + 
+  labs(x = "Supporting Parties", y = "Number of respondents", title="Bar plot of the supporters for each party", subtitle = "with education level of master's degree and higher")
+```
+From the bar plot, the respondents with master's degree and higher seemingly do not have a clear preference for each Canadian political party. 
+
+
+# Discussion
+
+From the three bar plots, we can find the Liberal Party gets the most supports from the survey respondents. Since the respondents with the high school degree and below and the master's degree and high are not the main groups of this survey participants, their preference for each Canadian political party may not clear. However, the number of Liberal Party's voters with the bachelor's degree is significantly higher than that of voters supporting other parties. Additionally, in the voters of the Liberal Party, the amount of voters with bachelor's degree and higher is obviously bigger than that of voters with the high school degree and lower.
+
+Our main finding is that the support of Canadian political parties is related to the educational level of voters. Although the data shows the Liberal Party is the most popular Canadian political party for all voters, voters with the bachelor's degree and higher more tend to support the Liberal Party. Thus, we can find voters with relatively high educational levels have an obvious preference for a specific Canadian political party which is Liberal Party, voters with relatively low educational levels do not show a clear preference for Canadian political parties.
+
+
+# Weaknesses and Future Work
+
+- Weaknesses: 
+
+The first weakness is we have some lurking variables in the study.
+
+The summary statistics of age:
+```{r, echo=FALSE, message=FALSE}
+age_without_na <- na.omit(final_sample$How.old.are.you.)
+summary(age_without_na)
+```
+
+```{r, echo=FALSE, message=FALSE}
+final_sample %>%
+  na.omit(final_sample$How.old.are.you.) %>%
+  ggplot(aes(x = Which.Canadian.political.party.do.you.support. , y=How.old.are.you.)) + 
+  geom_boxplot(outlier.colour="red",
+                outlier.size=1) + theme_bw() + 
+  labs(x = "Parties", y = "Age", title="Box plot of the ages of supporters and parties", subtitle = "")
+
+
+```
+The variable age might be a main lurking variable for our sample. 
+From the box plot, the political parties of New Democrat and Liberal have the highest average voters' age among the four political parties, also, the distribution range of voters in Liberal and New Democrat are wider than the other two. These results conclude that the voters' distribution might not be only contributed by the education level, age could also bring impacts on the distribution of voters. The Liberal party has more voters than the other three political parties not only because the voters in the liberal party have higher education level but also older voters tend to vote this part.
+Particularly, the median is the main factor that affects respondents' votes in our survey (In the result of the survey, 40% of respondents indicates median is the most significant influencing factor when they vote).
+
+Another weakness is that the educational level of samples is concentrated in the bachelor's degree, which leads the preferences of voters with the high school degree and below and the master's degree and higher is not clear for each Canadian political party. So, our result of data analysis may not be very consistent with the realistic situation.
+
+The final limitation is that our sample size is only 40, which means our sample might not be the representative of the population. 
+
+- Future work
+
+First of all, we can investigate other relative variables, such as income, and analyze whether the support of Canadian political parties is related to the income of voters or not. Also, we would find effective methods to reduce the influence of outliers and missing values on the result. 
+
+
+# Appendix
+
+Link to the survey: https://www.surveymonkey.com/r/SHG7BGM
+
+Below are the screenshots of survey:
+
+![Screenshot_1](/cloud/project/images/Picture1.png)
+
+![Screenshot_2](/cloud/project/images/Picture2.png)
+
+![Screenshot_3](/cloud/project/images/Picture3.png)
+
+![Screenshot_4](/cloud/project/images/Picture4.png)
+
+# References
+
